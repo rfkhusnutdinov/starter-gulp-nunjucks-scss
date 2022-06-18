@@ -9,7 +9,6 @@
     "prod:styles": "gulp stylesDeploy",
     "prod:scripts": "gulp scriptsDeploy",
     "prod:images": "gulp imagesDeploy",
-    "prod:webpImages": "gulp webpImagesDeploy",
     "prod:svg": "gulp svgDeploy",
     "prod:fonts": "gulp fontsDeploy",
     "prod:misc": "gulp miscDeploy",
