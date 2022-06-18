@@ -1,0 +1,29 @@
+// .breadcrumbs ====================================================================================================
+.breadcrumbs {
+  // .breadcrumbs__list
+  &__list {
+    margin-bottom: -5px;
+    @include list-reset;
+
+    li {
+      // display: inline; // Перенос слов, а не полностью весь пункт
+      display: inline-block;
+      margin-bottom: 5px;
+      color: $color-gray;
+
+      &:not(:last-child) {
+        &::after {
+          margin-right: 1px;
+          margin-left: 5px;
+          color: $color-dark;
+          content: "/";
+        }
+      }
+    }
+
+    a {
+      color: $color-dark;
+      text-decoration: none;
+    }
+  }
+}

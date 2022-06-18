@@ -1,0 +1,80 @@
+[data-modal] {
+  &.fade {
+    transition: opacity var(--speed), visibility var(--speed);
+  }
+
+  &.transformBottom {
+    transition: opacity var(--speed), visibility var(--speed);
+
+    [data-modal-wrapper] {
+      transform: translateY(calc(100vh));
+      transition: transform var(--speed);
+    }
+
+    &.active {
+      [data-modal-wrapper] {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &.transformTop {
+    transition: opacity var(--speed), visibility var(--speed);
+
+    [data-modal-wrapper] {
+      transform: translateY(calc(-100vh));
+      transition: transform var(--speed);
+    }
+
+    &.active {
+      [data-modal-wrapper] {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &.transformLeft {
+    transition: opacity var(--speed), visibility var(--speed);
+
+    [data-modal-wrapper] {
+      transform: translateX(calc(-100vw));
+      transition: transform var(--speed);
+    }
+
+    &.active {
+      [data-modal-wrapper] {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.transformRight {
+    transition: opacity var(--speed), visibility var(--speed);
+
+    [data-modal-wrapper] {
+      transform: translateX(calc(100vw));
+      transition: transform var(--speed);
+    }
+
+    &.active {
+      [data-modal-wrapper] {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &.scaleCenter {
+    transition: opacity var(--speed), visibility var(--speed);
+
+    [data-modal-wrapper] {
+      transform: scale(0);
+      transition: transform var(--speed);
+    }
+
+    &.active {
+      [data-modal-wrapper] {
+        transform: scale(1);
+      }
+    }
+  }
+}

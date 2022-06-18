@@ -1,0 +1,11 @@
+[data-accordion-top] {
+  cursor: pointer;
+  position: relative;
+}
+[data-accordion-body] {
+  --speed: 0.3s;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--speed);
+  will-change: max-height;
+}

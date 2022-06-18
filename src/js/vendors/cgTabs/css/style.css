@@ -1,0 +1,12 @@
+[data-tab] {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  visibility: hidden;
+}
+[data-tab].active {
+  max-height: unset;
+  opacity: 1;
+  visibility: visible;
+}

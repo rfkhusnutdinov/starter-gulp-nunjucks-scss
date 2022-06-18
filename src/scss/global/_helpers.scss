@@ -1,0 +1,121 @@
+@use "sass:math";
+
+// * ====================================================================================================
+// * FONT-FACE
+// * ====================================================================================================
+
+@mixin font-face($font-name, $font-src, $font-style, $font-weight) {
+  @font-face {
+    font-weight: $font-weight;
+    font-family: "#{$font-name}";
+    font-style: $font-style;
+    src: url("../fonts/#{$font-src}.woff2") format("woff2"),
+      url("../fonts/#{$font-src}.woff") format("woff"),
+      url("../fonts/#{$font-src}.ttf") format("ttf");
+    font-display: swap;
+  }
+}
+
+// * ====================================================================================================
+// * CENTER BLOCK
+// * ====================================================================================================
+
+@mixin margin-auto() {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-center-x() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin absolute-center-y() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// * ====================================================================================================
+// * LIST STYLE
+// * ====================================================================================================
+@mixin list-reset {
+  list-style: none;
+}
+
+// * ====================================================================================================
+// * FLEX COLUMNS
+// * ====================================================================================================
+@mixin grid($columns, $gap, $margin-bottom) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc((-1) * $gap / 2 * 1px);
+  margin-bottom: calc((-1) * $margin-bottom * 1px);
+  margin-left: calc((-1) * $gap / 2 * 1px);
+
+  & > * {
+    width: calc(1 / $columns * 100% - $gap * 1px);
+    margin-right: calc($gap / 2 * 1px);
+    margin-bottom: $margin-bottom * 1px;
+    margin-left: calc($gap / 2 * 1px);
+  }
+}
+
+// * ====================================================================================================
+// * PIXELS TO DIFFERENT UNITS
+// * ====================================================================================================
+
+// Удаление единицы измерения у числа (16px => 16) ====================================================================================================
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+// Конвератция px в rem ====================================================================================================
+@function px-to-rem($px) {
+  $result: math.div(strip-units($px), 16) + rem;
+  @return $result;
+}
+
+// Конвертация px в % ====================================================================================================
+@function px-to-prc($pxOne, $pxTwo) {
+  $result: math.div(strip-units($pxOne), strip-units($pxTwo)) * 100%;
+  @return $result;
+}
+
+@function get-size($pxMin, $pxMax) {
+  $addSize: strip-units($pxMax) - strip-units($pxMin);
+
+  @return calc(
+    #{$pxMin} + #{$addSize} *
+      (
+        (100vw - #{$min-width-container}) /
+          (
+            #{strip-units($max-width-container)} - #{strip-units(
+                $min-width-container
+              )}
+          )
+      )
+  );
+}
+
+// Адаптивное значение для свойства между максимальной шириной контейнера и минимальной
+// Передается в миксин (свойство, минимальное значение и максимальное значение)
+@mixin adaptive-value($property, $pxMin, $pxMax) {
+  #{$property}: $pxMax;
+
+  @media (max-width: #{$max-width-container}) {
+    #{$property}: get-size($pxMin, $pxMax);
+  }
+
+  @media (max-width: #{$min-width-container}) {
+    #{$property}: $pxMin;
+  }
+}

@@ -1,0 +1,33 @@
+// * ==================================================================================================
+// * VARIABLES
+// * ==================================================================================================
+
+// Fonts ==============================================================================================
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
+
+// Colors =============================================================================================
+$color-light: #fff;
+$color-dark: #000;
+$color-gray: #ccc;
+
+// Properties =========================================================================================
+$transition: 0.3s ease-out;
+$radius: 4px;
+$shadow: 12px 12px 2px 1px $color-gray;
+$outline: 1px solid $color-dark;
+
+// Mixins =============================================================================================
+@mixin body {
+  color: $color-dark;
+  background-color: $color-light;
+
+  @include body-text;
+}
+
+@mixin body-text {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: $font-primary;
+  line-height: 1.25;
+}

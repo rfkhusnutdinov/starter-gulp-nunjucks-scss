@@ -1,0 +1,31 @@
+[data-select] {
+  position: relative;
+
+  &.active {
+    [data-select-body] {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+[data-select-top] {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+[data-select-body] {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #000;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}

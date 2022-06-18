@@ -1,0 +1,47 @@
+// .select ====================================================================================================
+.select {
+  position: relative;
+
+  &.active {
+    .select__body {
+      display: block;
+    }
+  }
+
+  select {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+
+  // .select__top
+  &__top {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include input;
+  }
+
+  // .select__body
+  &__body {
+    position: absolute;
+    top: 100%;
+    display: none;
+    width: 100%;
+
+    @include select-body;
+  }
+
+  // .select__item
+  &__item {
+    cursor: pointer;
+
+    @include select-item;
+  }
+}

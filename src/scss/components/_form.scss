@@ -1,0 +1,55 @@
+@mixin input {
+  padding: 15px 20px;
+  color: $color-dark;
+  border: 1px solid $color-gray;
+  border-radius: $radius;
+}
+
+@mixin placeholder {
+  color: $color-gray;
+}
+
+@mixin select-body {
+  color: $color-dark;
+  border: 1px solid $color-gray;
+  border-radius: $radius;
+}
+
+@mixin select-item {
+  padding: 15px 20px;
+
+  &:hover,
+  &:focus {
+    background-color: $color-gray;
+  }
+}
+
+// .elements ====================================================================================================
+// @import "./form/input";
+// @import "./form/checkbox";
+// @import "./form/fieldset";
+// @import "./form/select";
+
+// .form ====================================================================================================
+.form {
+  // .form__row
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-bottom: -20px;
+    margin-left: -15px;
+
+    & > * {
+      width: calc(1 / 2 * 100% - 30px);
+      margin-right: 15px;
+      margin-bottom: 20px;
+      margin-left: 15px;
+    }
+  }
+
+  // .form__field
+  &__field {
+    margin-bottom: 20px;
+  }
+}

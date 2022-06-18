@@ -1,0 +1,81 @@
+// * ====================================================================================================
+// * GLOBAL STYLES
+// * ====================================================================================================
+// outline for interact from keyboard ====================================================================================================
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: $outline;
+}
+
+// .icon ====================================================================================================
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentcolor;
+}
+
+// .list-reset ====================================================================================================
+.list-reset {
+  list-style: none;
+}
+
+// .page ====================================================================================================
+.page {
+  height: 100%;
+
+  // .page__body
+  &__body {
+    height: 100%;
+    min-height: 100%;
+
+    @include body;
+
+    // .page__body--is-lock
+    &--is-lock {
+      overflow: hidden;
+    }
+  }
+
+  // .page__wrapper
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  // .page__main
+  &__main {
+    flex-grow: 1;
+  }
+}
+
+// .main ====================================================================================================
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+// .image ====================================================================================================
+.image {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+  text-decoration: none;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

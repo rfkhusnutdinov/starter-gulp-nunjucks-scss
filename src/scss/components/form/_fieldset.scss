@@ -1,0 +1,23 @@
+// .fieldset ====================================================================================================
+.fieldset {
+  // .fieldset__legend
+  &__legend {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  // .fieldset__box
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-bottom: -10px;
+    margin-left: -15px;
+
+    & > * {
+      margin-right: 15px;
+      margin-bottom: 10px;
+      margin-left: 15px;
+    }
+  }
+}
