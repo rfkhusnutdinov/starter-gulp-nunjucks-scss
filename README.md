@@ -1,5 +1,7 @@
 # Стартовый шаблон (Nunjucks, SCSS) (Starter template)
 
+Стратовый шаблон с использованием шаблонизатора HTMl - [Nunjucks](https://mozilla.github.io/nunjucks/), препроцессора [Sass\SCSS](https://sass-scss.ru/documentation/)
+
 ## Установка (Install)
 
 - Установить [Node.js](https://nodejs.org/en/) актуальной версии (Install actual version [Node.js](https://nodejs.org/en/))
