@@ -6,9 +6,9 @@
 
 - Установить [Node.js](https://nodejs.org/en/) актуальной версии (Install actual version [Node.js](https://nodejs.org/en/))
 - Скачать сборку (Download starter)
-- Установить gulp глобально <code>npm i -g gulp</code> (Install gulp globally)
+- Установить gulp глобально `npm i -g gulp` (Install gulp globally)
 - Перейти в папку со сборкой (go to folder of starter)
-- Установить все необходимые зависимости <code>npm i</code> (install dependencies <code>npm i</code>)
+- Установить все необходимые зависимости `npm i` (install dependencies <code>npm i</code>)
 - Для **работы в режиме разработчика** использовать команду `npm run dev` (Run for development `npm run dev`)
 - Для **сборки проекта** в продакшн использовать команду `npm run prod` (Run for production `npm run prod`)
 
