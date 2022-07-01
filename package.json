@@ -34,6 +34,7 @@
     "gulp-cheerio": "^1.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-fonter": "^0.3.0",
+    "gulp-fonter-unx": "^0.3.0",
     "gulp-format-html": "^1.2.5",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-imagemin": "^8.0.0",
